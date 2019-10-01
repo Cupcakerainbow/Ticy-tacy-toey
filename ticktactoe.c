@@ -1,7 +1,11 @@
 #include<stdio.h>
 #include<time.h>
 #include<stdlib.h>
+
+
 char matrix [3][3]={};
+
+// Function to make computer moves
 int computermove()
 {
 	int flag=0;
@@ -13,7 +17,6 @@ int computermove()
 		}
 	}
 		
-
 	if(!flag) return 0;
 	srand(time(NULL));
 	while(1)
@@ -45,8 +48,8 @@ void displaygrid()
     return;
 }
 
-	
 
+// Check for Xs or Os
 int checkXorO(char a,char b,char c)
 {
 	if(a=='X')if(b=='X')if(c=='X')return 1;
@@ -54,6 +57,8 @@ int checkXorO(char a,char b,char c)
 	return 0;
 }
 
+
+// Function to check wins
 int checkwin()
 {
 	for(int i=0;i<3;i++)if(checkXorO(matrix[i][0],matrix[i][1],matrix[i][2])==1) return 1;
@@ -66,7 +71,6 @@ int checkwin()
 	if(checkXorO(matrix[2][0],matrix[1][1],matrix[0][2])==-1)return  -1;
 
 }
-
 
 
 
